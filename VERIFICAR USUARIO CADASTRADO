@@ -1,0 +1,10 @@
+echo "Informe o nome do usuário: "
+read usuario
+
+cut -f 1 -d: /etc/passwd | grep -i $usuario > /dev/null
+
+if [ $? -eq 0 ]; then
+        echo "$usuario está cadastrado"
+else
+        echo "$resposta não está cadastrado"
+fi
